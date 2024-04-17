@@ -1,0 +1,37 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCIA = [
+    {
+        title: 'Servicio social',
+        time: 'lanzado en septiembre 2020',
+        description: 'Este proyecto funciona para realizar algunas pruebas que estoy realizando para el portafolio  del buen midudev',
+        link: '#',
+        badge: 'AHORA'
+    },
+    {
+        title: 'Servicio social',
+        time: 'lanzado en septiembre 2020',
+        description: 'Este proyecto funciona para realizar algunas pruebas que estoy realizando para el portafolio  del buen midudev',
+        link: '#',
+        
+    },
+    {
+        title: 'Servicio social',
+        time: 'lanzado en septiembre 2020',
+        description: 'Este proyecto funciona para realizar algunas pruebas que estoy realizando para el portafolio  del buen midudev',
+        link: '#',
+    }
+]
+---
+<ol class="relative ml-4 border-s border-gray-200 dark:border-gray-700">                  
+        {
+            EXPERIENCIA.map(experience => (
+            <li class="mb-10 ms-6">
+                <ExperienceItem {... experience} />   
+            </li>
+            ))
+        }            
+       
+</ol>
+

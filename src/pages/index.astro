@@ -1,16 +1,68 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
+import LinkedlnIcon from "../icons/Linkedln.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import SocialPill from '../components/SocialPill.astro';
+import MailIcon from '../icons/Mail.astro'
+import Experience from '../components/Experience.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Briefcase from '../icons/Briefcase.astro';
+import ProyectDevice from '../icons/ProyectDevice.astro';
+import Proyect from '../components/Proyect.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Portafolio Brandon Vazquez | Ingeniero Informatico | desarrollador FullStack" 
+	description="Hola! Soy estudiante de Ingeniería en Informática y Desarrollador FullStack en la Ciudad de México. Explora mi portafolio para descubrir mi pasión por la creación de soluciones tecnológicas innovadoras.">
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-32">
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				Brandon Vazquez
+				<a href="https://mx.linkedin.com/in/bvazquezj" 
+					target="_blank" 
+					rel="noopener"
+					class="flex justify-center items-center">
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">Estudiante de <span class="text-blue-400/90">Ingeniería en Informática</span> y Desarrollador <span class="text-red-300/95">FullStack</span> en la Ciudad de <span class="text-green-500">Mé</span>xi<span class="text-red-600">co</span>. Apasionado por encontrar soluciones creativas en el mundo de la tecnología 💻.
+			</h2>
+
+			<nav class="flex gap-6 mt-8 flex-wrap">
+				<SocialPill href="https://mx.linkedin.com/in/bvazquezj">
+					<LinkedlnIcon class="size-4 md:size-6" />
+					Linkedin
+				</SocialPill>
+				<SocialPill href="https://github.com/bvazquezj">
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub
+				</SocialPill>
+				<SocialPill href="mailto:bvazquezj1700@gmail.com">
+					<MailIcon class="size-4 md:size-6" />
+					bvazquezj1700@gmail.com
+				</SocialPill>
+				
+			</nav>		
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="flex gap-x-3 items-center text-3xl font-semibold mb-4"> 
+				<ProyectDevice class="size-7  " /> 
+				Proyectos
+			</h2>			
+			<Proyect />
+		</SectionConitainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="flex gap-x-3 items-center text-3xl font-semibold mb-4"> 
+				<Briefcase class="size-7  " /> 
+				Estudios
+			</h2>			
+			<Experience />
+		</SectionConitainer>
+
+		
+	</main>
+</Layout>

@@ -1,0 +1,56 @@
+---
+import Badge from "./Badge.astro"
+import HtmlIcon  from "../icons/Html.astro"
+import CssIcon from "../icons/Css.astro"
+import JscryptIcon from "../icons/Jscrypt.astro"
+
+const TECH = {
+    HTML: {
+        name: 'HTML',
+        icon: HtmlIcon,
+    },
+    CSS: {
+        name: 'CSS',
+        icon: CssIcon,
+    },
+    JS: {
+        name: 'JScrypt',
+        icon: JscryptIcon,
+    },
+}
+
+const PROYECTS = [
+    {
+        title: 'Encryptador Jabran',
+        description: 'Este proycto es un encriptadpor el cual recorre la letra que precionaste dos posiciones fue   uno de los primeros retos que me plantee en el mundo de la programacion ya que usaba ese tipo de codigos hace muchos años con mi novia. ahora es 10 veces mas sencillo escriirle de esta forma.',
+        image: '../../public/proyets/JabranEncrypt.webp',
+        link: 'https://bvazquezj.github.io/encrypt-Jabran/',
+        github: 'https://github.com/bvazquezj/encrypt-Jabran',
+        tech: [TECH.HTML, TECH.CSS, TECH.JS]
+    }
+]
+
+---
+
+{
+    PROYECTS.map(({title, description, image, link, github, tech}) => (
+        <article class="flex flex-col border-white bg-gray-900/30 mb-12 p-6 rounded shadow">
+            <h3 class="text-2xl font-semibold mb-2 ">{title}</h3>
+            <p class="text-lg mb-4 text-pretty py-4">{description}</p>  
+            <ul class="flex gap-x-4 flex-row">
+                {tech.map(tech => (
+                    <li class="py-4"> 
+                        <span class="flex gap-x-2 rounded-full text-xs py-1 px-2 mb-4" >
+                            <tech.icon class="size-4" />
+                            {tech.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-blue-300/20"
+                src={image} 
+                alt={`Captura de pantallla del proyecto ${image}`} />  
+        </article>
+    ))
+}
